@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React from 'react'
+import App from '../App'
 import Item from './Item'
 import data from './data.json'
 
@@ -9,14 +10,16 @@ import data from './data.json'
 // MÉTODOS: Listado no requiere de métodos.
 // PROPS: Listado recibe el método para aumentar el estado de App y se lo pasa a cada uno de sus hijos.
 
-export default function Listado({total, setTotal}) {
+ const Listado = ({total, setTotal}) => {
   return (
+    <App>
     <div className='container'>
-      {data.map(itemU =>
-      <Item total={total} setTotal={setTotal} itemU={itemU}/>
-      )
-      
-      /* renderizamos los Item aquí */}
+      {data.map(item =>
+      <Item total={total} setTotal={setTotal} item={item}/>
+      )}
     </div>
+    </App>
   )
 }
+
+export default Listado
