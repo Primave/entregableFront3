@@ -1,6 +1,4 @@
-import React from "react";
-import {useState} from React
-
+import React, {useState} from 'react';
 import Cabecera from './components/Cabecera';
 import Listado from './Components/Listado';
 
