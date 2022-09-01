@@ -14,14 +14,14 @@ function App() {
   const [contador, setContador] = useState(0);
 
   const somarContador = () => {
-    setContador (contador + 1);
+    setContador(contador + 1);
   }
 
 
   return (
     <div className="App">
       <Cabecera contador={contador}/>
-      <Listado somarContador={somarContador}/>
+      <Listado somarContador={somarContador} />
     </div>
   );
 }

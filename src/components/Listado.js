@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '../App';
+import { useState } from 'react';
 import Item from './Item';
 import data from './data.json';
 
@@ -10,12 +10,14 @@ import data from './data.json';
 // MÉTODOS: Listado no requiere de métodos.
 // PROPS: Listado recibe el método para aumentar el estado de App y se lo pasa a cada uno de sus hijos.
 
-export default function Listado (props) {
+console.log(data);
+
+export default function Listado ({somarContador}) {
   return (
   
     <div className='container'>
       {data.map(item => (
-      <Item somaContador={props.somaContador} key={item.id} item={item}/>
+      <Item somarContador={somarContador} key={item.id} item={item}/>
      ) )}
     </div>
    
