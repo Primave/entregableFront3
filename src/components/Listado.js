@@ -1,7 +1,7 @@
-import React from 'react'
-import App from '../App'
-import Item from './Item'
-import data from './data.json'
+import React from 'react';
+import App from '../App';
+import Item from './Item';
+import data from './data.json';
 
 // Debemos importar el listado de objetos del archivo JSON para usarlos como array a la hora de crear cada Item.
 // El componente Listado es el padre de:
@@ -10,16 +10,15 @@ import data from './data.json'
 // MÉTODOS: Listado no requiere de métodos.
 // PROPS: Listado recibe el método para aumentar el estado de App y se lo pasa a cada uno de sus hijos.
 
- const Listado = ({total, setTotal}) => {
+export default function Listado (props) {
   return (
-    <App>
+  
     <div className='container'>
-      {data.map(item =>
-      <Item total={total} setTotal={setTotal} item={item}/>
-      )}
+      {data.map(item => (
+      <Item somaContador={props.somaContador} key={item.id} item={item}/>
+     ) )}
     </div>
-    </App>
+   
   )
-}
 
-export default Listado
+}

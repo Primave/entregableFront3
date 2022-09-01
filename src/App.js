@@ -11,14 +11,17 @@ import Listado from './components/Listado';
 
 function App() {
 
-  const [total, setTotal] = useState({ 
-    stock: 0
-  })
+  const [contador, setContador] = useState(0);
+
+  const somarContador = () => {
+    setContador (contador + 1);
+  }
+
 
   return (
     <div className="App">
-      <Cabecera total={total}/>
-      <Listado total={total} setTotal={setTotal}/>
+      <Cabecera contador={contador}/>
+      <Listado somarContador={somarContador}/>
     </div>
   );
 }
